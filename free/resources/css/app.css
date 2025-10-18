@@ -1,0 +1,46 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/* Custom Components */
+@layer components {
+    .btn-primary {
+        @apply bg-[#78C2AD] hover:bg-[#6BB39A] text-white font-medium px-6 py-3 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl;
+    }
+    
+    .btn-secondary {
+        @apply bg-white hover:bg-gray-50 text-[#212121] font-medium px-6 py-3 rounded-lg transition-all duration-200 border border-[#212121];
+    }
+    
+    .card {
+        @apply bg-white dark:bg-gray-800 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 p-6;
+    }
+    
+    .input-field {
+        @apply w-full px-4 py-3 border border-[#D1D1D1] rounded-lg bg-white text-[#212121] placeholder-[#A1A1A1] focus:ring-2 focus:ring-[#78C2AD] focus:border-transparent transition-all duration-200;
+    }
+    
+    .container-responsive {
+        @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    }
+}
+
+/* Custom Utilities */
+@layer utilities {
+    [x-cloak] { display: none !important; }
+    .text-gradient {
+        @apply bg-gradient-to-r from-[#78C2AD] to-[#6BB39A] bg-clip-text text-transparent;
+    }
+    
+    .glass-effect {
+        @apply bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-white/20 dark:border-gray-700/20;
+    }
+}
