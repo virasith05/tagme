@@ -151,10 +151,11 @@
     </nav>
 
     <!-- Main Content -->
-    <main class="min-h-screen">
+    <main class="@yield('main_class', 'min-h-screen')">
         @yield('content')
     </main>
 
+    @if (!View::hasSection('nofooter'))
     <!-- Profile Footer Banner -->
     <section class="bg-white">
         <div class="w-full pt-0 pb-0 text-center">
@@ -232,6 +233,7 @@
             </svg>
         </button>
     </div>
+    @endif
 
     <!-- Toast Container -->
     <div x-data="toast()" class="fixed top-4 right-4 z-50 space-y-2">
